@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIA Intelligence Platform · Proposal</title>
+    <!--spa-restore-->
+    <script>
+      (function () {
+        var m = window.location.search.match(/[?&]p=([^&]*)/);
+        if (m) {
+          var route = decodeURIComponent(m[1]);
+          var rest = window.location.search
+            .replace(/[?&]p=[^&]*/, '')
+            .replace(/^&/, '?');
+          if (rest === '?') rest = '';
+          window.history.replaceState(
+            null,
+            '',
+            window.location.pathname.replace(/\/$/, '') +
+              route +
+              rest +
+              window.location.hash
+          );
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/MIA-intelligence-platform/assets/index-qQrEa-rb.js"></script>
+    <link rel="stylesheet" crossorigin href="/MIA-intelligence-platform/assets/index-C3fN3962.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

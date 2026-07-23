@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var base = '/MIA-intelligence-platform/';
+        var l = window.location;
+        var rest = l.pathname.indexOf(base) === 0 ? l.pathname.slice(base.length) : '';
+        rest = rest.replace(/^\/+/, '');
+        var target = base;
+        var route = rest;
+        var m = rest.match(/^v\/([^\/]+)\/?(.*)$/);
+        if (m) {
+          target = base + 'v/' + m[1] + '/';
+          route = m[2];
+        }
+        l.replace(
+          target + '?p=/' + route + (l.search ? '&' + l.search.slice(1) : '') + l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
